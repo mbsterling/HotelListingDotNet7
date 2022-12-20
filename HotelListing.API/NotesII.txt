@@ -1,0 +1,37 @@
+﻿To use EF, you need (from NuGet Package Manager)
+ - EF for SQL server: "Microsoft.EntityFrameworkCore.SqlServer"
+ - EF Tools: "Microsoft.EntityFrameworkCore.Tools"
+
+ Setting up the migration (steps and models etc.) to create your database
+ CODE FIRST.
+
+	- Code first allows for creating your entities/models and then creating your
+		tables from your entities/models
+	- Set up a valid connection string to your DB
+	- Set up your models/entities, in our case Hotels and Countries
+	- You add those DbSets to your DbContext file i.e.: 
+			DbSet<Hotel> { get; set; }
+	- Then you create the tables in your DB by doing a migration using the 
+		NuGet Package Manager console tool/window and running the following
+		command(s): PM> add-migration InitialMigration
+		This will produce a migration file in your project which shows you what
+		tables you'll be creating and any PK/FK relationships etc.
+	- Finally: PM> update-database.
+
+SEEDING (Putting in default data into the tables we just created)
+
+- You can write the "configurations" (code to seed your table data) directly in
+	your DbContext file or you can creat configuration classes keeping with the 
+	idea of making sure that a class has one specific task/job and not several
+
+- Once your done "seeding" your data you can run PM> Add-Migration SeedData
+	which will create a migration with the details of the seed data that you 
+	gave it. and then PM> update-database
+	
+CONTROLLERS
+
+	- Use: "Add API Controller with actions using Entity Framework"
+	- If you have trouble scaffolding double check your version numbers
+
+
+		
