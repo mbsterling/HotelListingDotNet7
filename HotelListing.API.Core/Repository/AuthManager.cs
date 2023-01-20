@@ -108,8 +108,7 @@ namespace HotelListing.API.Core.Repository
 
             return result.Errors;
         }
-
-        
+  
         /// <summary>
         /// 1st: To generate the token, we need to know what the Symmetric Key is.
         /// To know what the symmetric key is we must know what the key value is.

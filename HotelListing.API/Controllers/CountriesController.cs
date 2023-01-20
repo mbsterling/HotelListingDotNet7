@@ -46,7 +46,6 @@ namespace HotelListing.API.Controllers
 
         // GET: api/Countries?StartIndex=0&PageSize=25&PageNumber=1
         [HttpGet]
-
         public async Task<ActionResult<PagedResult<GetCountryDto>>> GetPagedCountries([FromQuery] QueryParameters queryParameters)
         {
             var pagedCountriesResult = await _countriesRepository.GetAllAsync<GetCountryDto>(queryParameters);
